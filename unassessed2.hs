@@ -44,10 +44,10 @@ halve :: [a] -> ([a], [a])
 halve xs = (take n xs, drop n xs) where n = (length xs) `div` 2
 
 -- 2.
-third :: [a] -> [a]
-third xs = head (tail (tail (tail xs)))
-third xs = xs !! 3
-third (a:b:c:x:xs) = x
+-- third :: [a] -> [a]
+-- third xs = head (tail (tail (tail xs)))
+-- third xs = xs !! 3
+-- third (a:b:c:x:xs) = x
 
 -- 3.
 safetail :: [a] -> [a]
@@ -87,3 +87,16 @@ safetail xs | null xs = []
 grid x y = [(x,y) | x <- [0..x], y <- [0..x]]
 
 -- 3. 
+square x = [(x,y) | (x,y) <- (grid x x), x /= y]
+
+-- 4.
+replicate n x = [x | _ <- [1..n]]
+
+-- 5.
+pyths n = [(x,y,z) | x <- [1..n], y <- [1..n], z <- [1..n], (x*x + y*y) == (z*z)]
+
+-- 6.
+factors n = Prelude.init [x | x <- [1..n], n `mod` x == 0] 
+perfects n = [x | x <- [1..n], sum (factors x) == x]
+
+ 
