@@ -1,6 +1,6 @@
 import Data.Char
+import ListSplit -- Local version of Data.List.Split(.Internals)
 
-import ListSplit
 import MorseLib
 
 {- Encode a string into Morse, with a shortGap after each letter
